@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Creo Simulate 교육</title>
+    <link rel="icon" href="CHfavicon.png">
+    <meta charset="utf-8"> 
+    <style>
+     a {
+        color: black;
+        text-decoration: none;
+     }
+     h1 {
+        font-size: 50px;
+        text-align: center;
+        border-width: 7px;
+        border-color: green;
+        border-style: ridge;
+        margin: 0px;
+        padding: 15px;
+     }
+     #active {
+        color: blue;
+     }
+     .saw {
+        color: gray;
+     }
+     #grid {
+        display: grid;
+        grid-template-columns: 300px 1300px 300px;
+        grid-template-areas:
+            "index  main  log"
+    }
+    iframe {
+        position: fixed;
+        border-right: 2px solid green;
+        border-bottom: none;
+        border-left: none;
+        border-top: none;
+        width: 300px;
+        height: 100%;
+        margin: 0px;
+    }
+    img {
+        margin: 40px 50px 10px 0px;
+    }
+    body {
+      margin: 0px;
+    }
+    u {
+        color: rgb(51, 104, 51)
+    }
+    P {
+        font-size : 17px; 
+    }
+    @media(max-width :1300px) {
+        #grid {
+            display: block;
+            margin-top: 1000px;
+        }
+        iframe {
+            position: absolute;
+        }    
+    }
+    </style>
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <h1 style="margin-top:15px;"><a href="CreoSimulate.html" style="color: green" title="Creo Simulate 교육 메인페이지로 이동">Creo Simulate 교육</a></h1>
+    <iframe src="CreoSimulateIndex.html"></iframe>
+    <div id="grid">
+        <div></div>
+        <div style="margin:80px 80px 80px 80px;">
+            <h3 style="margin-top:100px;">교육에 앞서</h3>
+            <p><strong>&nbsp&nbsp : Creo에서 제공하는 simulate의 종류가 다양합니다.</strong></p>
+            <p><strong>&nbsp&nbsp&nbsp Creo simulate, Ansys simulate, Flow analysis, Creo simulation live, Mold analysis 외에도 목적에 따라 여러 simulate를 제공하고 있습니다.</strong></p>
+            <p><strong>&nbsp&nbsp&nbsp 때문에 목적에 맞는 simulate를 확인하시고 다른 교육이 필요하신 분은  <a href="아직 미정.html" class="saw" id="active">'Simulate 교육 센터'</a>에서 맞는 과정을 찾아보시기 바랍니다.</strong></p>
+            <p><strong>&nbsp&nbsp&nbsp 자료는 Creo 9.0을 기준으로 작성했으나 6.0~10.0까지 교육 자료로 활용할 수 있습니다. (제공되는 CAD 제외)</strong></p>
+            <p><strong>&nbsp&nbsp&nbsp 본 교육을 마치면 다음과 같은 결과물을 설계할 수 있습니다.</strong></p>
+            <p><img src="CreoBasicProject1.gif" height="450">
+            <p style="margin-top:150px;"></p>
+            <ol>
+                <h3><li><a href="1. intro.html" title="클릭 시 이동" class="saw" id="active">Creo Simulate 소개</a></li></h3>
+                <img src="1. Intro/Intro1.gif" height="600">
+                <p>Creo Simulate를 사용하기 위해 분석 적용 가능한 범위와 진행 과정을 알아보겠습니다.</p>
+                <p>Creo simulate는 '응용 프로그램 탭 > 시뮬레이션 그룹> Simulate'로 모듈을 적용할 수 있습니다.</p>
+                <p style="margin-top:30px;">- 분석 가능 사례</p>
+                <p>- 인터페이스</p>
+                <P>- 분석 진행 과정</p>
+                <p>- 솔버, 하드웨어 설정</p>
+                
+                <h3 style="margin-top:150px;"><li><a href="2. Theory1.html" title="클릭 시 이동" class="saw" id="active">기초이론Ⅰ</a></li></h3>
+                <img src="2. Theory1/Thoeory1.gif" height="600">
+                <p>Creo Simulate에 적용되는 이론을 간단히 알아보겠습니다.</p>
+                <p>시뮬레이션 시 조건 설정을 하기 위한 교육으로, 간단한 설명 위주의 교육이 되겠습니다.</p>
+                <p style="margin-top:30px;">- 유한 요소법</p>
+                <p>- 수렴 방식</p>
+
+                <h3 style="margin-top:150px;"><li><a href="3. Theory2.html" title="클릭 시 이동" class="saw" id="active">기초이론Ⅱ</a></li></h3>
+                <img src="3. Theory2/Thoeory27.png" height="450">
+                <p>Creo Simulate에 적용되는 이론을 간단히 알아보겠습니다.</p>
+                <p>시뮬레이션 시 조건 설정을 하기 위한 교육으로, 간단한 설명 위주의 교육이 되겠습니다.</p>
+                <p style="margin-top:30px;">- 재료에 따른 응력 분석</p>
+                <p>- Fail 정의</p>
+                <p>- 재료 방향</p>
+
+                <h3 style="margin-top:150px;"><li><a href="4. Preparation1.html" title="클릭 시 이동" class="saw" id="active">모델 준비Ⅰ</a></li></h3>
+                <img src="4. Preparation1/Preparation1.gif" height= "600">
+                <p>모델 전처리 과정을 알아보겠습니다.</p>
+                <p>모델 전처리를 통해 하드웨어 부담을 덜어줘 노이즈를 줄이고 분석 시간을 단축할 수 있습니다.</p>
+                <p style="margin-top:30px;">- 모델 단순화</p>
+                <p>- 단위 관리</p>
+                <p>- 시뮬레이션 좌표계</p>
+                <p>- 영역 사용</p>
+                <p>- 측정값 사용</p>
+
+                <h3 style="margin-top:150px;"><li><a href="5. Preparation2.html" title="클릭 시 이동" class="saw" id="active">모델 준비Ⅱ</a></li></h3>
+                <img src="5. Preparation2/Preparation2.gif" height="430">
+                <p>모델 준비1이 필수적인 전처리 과정이라면 모델 준비2는 '이상화'에 관한 내용으로 선택적인 전처리 과정입니다.</p>
+                <p>형상이 복잡하거나 CAD 용량이 큰 경우, 혹은 스프링, 크렉처럼 특이 조건을 정의하기 위해서 필요합니다.</p>
+                <p>전처리 단계라 5번에 위치하나 실습과정에서 구속 설정, 압력 입력 등 아직 배우지 않은 부분이 나옵니다.</p>
+                <p>때문에 <strong>'10. 어셈블리 연결'</strong>까지 진행 후 이 교육을 시작하는걸 추천드립니다.</p>
+                <p style="margin-top:30px;">- 이상화</p>
+                <p>- 쉘</p>
+                <p>- 스프링</p>
+                <p>- 빔</p>
+
+                <h3 style="margin-top:150px;"><li><a href="6. Constraint.html" title="클릭 시 이동" class="saw" id="active">제약</a></li></h3>
+                <img src="6. Constraint/Constraint1.gif" height="600">
+                <p>제약을 통해 위치별 구동을 통제할 수 있습니다. X축으로 슬라이드는 되지만 그외 움직임과 Y축으로만 회전가능한 물제를 제약할 수 있습니다.</p>
+                <p>기본적인 3평행 이동, 3회전 제약부터 핀 및 볼, 대칭 제약 등 다양한 제약으로 시뮬레이션 상황을 구현할 수 있습니다.</p>
+                <p style="margin-top:30px;">- 변위 구속</p>
+                <p>- 평면, 핀, 볼 구속</p>
+                <p>- 대칭 구속</p>
+
+                <h3 style="margin-top:150px;"><li><a href="7. Load.html" title="클릭 시 이동" class="saw" id="active">하중</a></li></h3>
+                <img src="7. Load/Load1.gif" height="600">
+                <p>이번 시간에는 모델에 응력이나 변형을 일으키는 힘과 모멘트 등을 설정하는 법을 교육하겠습니다.</p>
+                <p>필요하다면 압력이나 하중을 함수로 정의해 적용할 수 있습니다.</p>
+                <p style="margin-top:30px;">- 글로벌 로드</p>
+                <p>- 로컬 로드</p>
+                <p>- 함수 정의 로드</p>
+
+                <h3 style="margin-top:150px;"><li><a href="8. Mesh.html" title="클릭 시 이동" class="saw" id="active">메쉬</a></li></h3>
+                <img src="8. Mesh/Mesh1.gif" height="600">
+                <p>특정 관심 영역에 더 많은 요소가 필요한 경우 메쉬를 추가하여 요소 밀도를 높이고 불필요한 부분의 메쉬를 낮출 수 있습니다.</p>
+                <p>분석이 실행될 때 메쉬가 없으면 Simulate는 자동으로 현재 AutoGEM 설정 및 컨트롤을 사용하여 메쉬를 생성합니다.</p>
+                <p style="margin-top:30px;">- 메쉬 옵션 이해</p>
+                <p>- AutoGEM 설정</p>
+
+                <h3 style="margin-top:150px;"><li><a href="9. Analysis.html" title="클릭 시 이동" class="saw" id="active">구조 분석</a></li></h3>
+                <img src="9. Analysis/Analysis1.gif" height="600">
+                <p>정적 분석은 시간과 무관한 하중으로 인한 변형, 응력 또는 변형을 분석하는 데 사용됩니다.</p>
+                <p>모달 분석을 사용하여 Creo Parametric 부품 또는 어셈블리의 진동 특성(고유 진동수 및 모드 형상)을 결정할 수 있습니다.</p>
+                <p>간헐적이거나 진동하는 하중을 받는 모델의 경우 응력이 탄성 한계를 초과하지 않더라도 파손이 발생할 수 있습니다. 이러한 실패 모드를 피로라고 합니다.</p>
+                <P>프리스트레스, 선형 좌굴, 비선형 해석은 <strong>'14. 고급 분석'</strong>에서 심화해서 다루도록 하겠습니다.</P>
+                <p style="margin-top:30px;">- 선형 정적 분석</p>
+                <p>- 모달 해석</p>
+                <p>- 피로 연구</p>
+
+                <h3 style="margin-top:150px;"><li><a href="10. assy.html" title="클릭 시 이동" class="saw" id="active">어셈블리 연결</a></li></h3>
+                <img src="10. Assy/Assy1.gif" height="600">
+                <p>이번 시간에는 파트끼리 조립된 상태를 정의하고 표면의 접합 상태를 설정하는 법을 교육하겠습니다.</p>
+                <p>Simulate에서 에폭시에 의한 접합 상태 등을 지원하지 않습니다. (여타 시뮬레이터도 마찬가지)</p>
+                <p>이는 모델에 따라 에폭시 종류가 달라지거나, 작업자에 의해 양이나 분포되는 면적이 미세하게 달라지기 때문에 정의할 수 없기 때문입니다.</p>
+                <p style="margin-top:30px;">- 접촉 조건</p>
+                <p>- 용접</p>
+                <p>- 패스너</p>
+                <p>- 강체 링크</p>
+
+                <h3 style="margin-top:150px;"><li><a href="11. result.html" title="클릭 시 이동" class="saw" id="active">결과 설정</a></li></h3>
+                <img src="11. result/result1.gif" height="600">
+                <p>결과를 확인하고 저장하는 방법을 알아보겠습니다.</p>
+                <p>앞선 실습을 통해 사용법을 알기 때문에 설명을 통해 기능을 이해해 보겠습니다.</p>
+                <p style="margin-top:30px;">- 결과 저장</p>
+                <p>- 결과 확인 창</p>
+                <p>- 프린지 / 벡터 / 그래프</p>
+                <p>- 결과 내보내기</p>
+
+                <h3 style="margin-top:150px;"><li><a href="12. optimize.html" title="클릭 시 이동" class="saw" id="active">최적화</a></li></h3>
+                <img src="12. Optimize/Optimize1.gif" height="600">
+                <p>이번에는 결과를 피드백하고 모델 치수 설계를 최적화하는 과정을 교육하겠습니다.</p>
+                <p style="margin-top:30px;">- 설계변수</p>
+                <p>- 민감도</p>
+                <p>- 최적화</p>
+
+                <h3 style="margin-top:150px;"><li><a href="13. Heat.html" title="클릭 시 이동" class="saw" id="active">열분석</a></li></h3>
+                <img src="13. Heat/Heat1.gif" height="600">
+                <p>이번에는 결과를 피드백하고 모델 치수 설계를 최적화하는 과정을 교육하겠습니다.</p>
+                <p style="margin-top:30px;">- 설계변수</p>
+                <p>- 민감도</p>
+                <p>- 최적화</p>
+
+            </ol>
+        </div>
+        <div></div>
+    </div>
+</body>
+</html>
