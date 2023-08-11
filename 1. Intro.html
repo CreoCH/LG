@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Creo simulate 교육 - 소개</title>
+    <link rel="icon" href="CHfavicon.png">
+    <meta charset="utf-8"> 
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            border-width: 7px;
+            border-color: green;
+            border-style: ridge;
+            margin: 0px;
+            padding: 15px;
+        }
+        img {
+            margin: 40px 50px 10px 50px;
+            border: 1px solid;
+            object-fit: contain;
+        }
+        body {
+            margin: 0px;
+        }
+        u {
+            color: rgb(51, 104, 51)
+        }
+        #active {
+            color: blue;
+        }
+        .saw {
+            color: gray;
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: 300px 1300px 300px;
+            grid-template-areas:
+                "index  main  log"
+        }
+        iframe {
+            position: fixed;
+            border-right: 2px solid green;
+            border-bottom: none;
+            border-left: none;
+            border-top: none;
+            width: 300px;
+            height: 100%;
+            margin: 0px;
+        }
+        p {
+            font-size: 17px;
+            line-height: 2.4;
+        }
+        @media (max-width :1300px) {
+            #grid {
+                display: block;
+                margin-top: 1000px;
+            }
+            iframe {
+                position: absolute;
+            }    
+        }
+        /*
+        @media only screen and (min-width :900px) and (max-width :1300px) {
+            #grid {
+                display: block;
+                margin-top: 1000px;
+            }
+            iframe {
+                position: absolute;
+            }    
+        }
+        @media only screen and (min-width :1px) and (max-width : 900px) {
+            #grid {
+                display: block;
+                margin-top: 1000px;
+            }
+            iframe {
+                position: absolute;
+            }
+            img{
+                max-width: 100%;
+                width:auto;
+            }    
+        }
+        */
+    </style>
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <h1 style="margin-top:15px;"><a href="CreoSimulate.html" style="color: green" title="Creo Simulate 교육 메인페이지로 이동">Creo Simulate 교육</a></h1>
+    <iframe src="CreoSimulateIndex.html"></iframe>
+    <div id="grid"> <!--이 바로 아래 div 3개가 grid로 나눠논 index, main, log-->
+        <div></div> <!--index, 첫번째 grid 영역 시작, 끝-->
+        <div style="margin:80px 80px 80px 80px;"> <!--main, 두번째 grid 영역 시작-->
+
+            <div style="margin-top:100px;">
+                <h2><li>Creo simulate 분석 가능 사례</li></h2>
+                <p style="margin-top:50px;"></p>
+                <img src="1. Intro/Intro1.png" width="600">
+                <p>이 교육은 Creo Simulate를 사용하여 동적 분석, 기계 및 열 분석, 모달 해석 등을 배웁니다. 
+                과정을 마친 후에는 제품 설계 모델에 대한 엔지니어링 분석 및 최적화를 실행할 수 있습니다.</p>
+                <p style="margin-top:50px;">그럼 Creo simulate로 분석 가능한 사례를 살펴보겠습니다.</p>
+                <img style="border: none;"  src="1. Intro/Intro2.png" width="900">
+            </div>
+
+            <div style="margin-top:200px;">
+                <h2><li>인터페이스</li></h2>
+                <p style="margin-top:50px;"></p>    
+                <img src="1. Intro/Intro3.png" height="120">
+                <p>'응용 프로그램 탭 > 시뮬레이션 그룹> Simulate'를 누르면 Creo simulate 기능을 사용할 수 있습니다.</p>
+                <img src="1. Intro/Intro4.png" height="120">
+                <p>-. Home 탭</p>
+                <p style="margin-left:50px;">구조 모드(기본값) 또는 열 모드를 선택 </p>
+                <p style="margin-left:50px;">좌표계 선택, 모델 셋업</p>
+                <p style="margin-left:50px;">시뮬레이션 모델 정의, 재료 및 측정을 생성</p>
+                <p style="margin-left:50px;">하중, 구속조건 등을 설정</p>
+                <p style="margin-left:50px;">포스트 프로세서를 확인하고 분석을 진행</p>
+                <img src="1. Intro/Intro5.png" height="120">
+                <p>-. 모델 미세 조정 탭</p>
+                <p style="margin-left:50px;">시뮬레이션 모델 미세 조정, 이상화, 연결, 표면 영역 및 체적 영역, 데이텀 편집</p>
+                <p style="margin-left:50px;">메시 생성을 제어하고 지오메트리 공차를 정의</p>
+                <p style="margin-left:50px;">인터레이스, 용접, 패스너 등의 연결 관리</p>
+                <img src="1. Intro/Intro6.png" height="120">
+                <p>-. 검사 탭</p>
+                <p style="margin-left:50px;">모델 길이, 간섭, 질량 특성 등의 정보를 얻음</p>
+                <img src="1. Intro/Intro7.png" height="120">
+                <p>-. 도구 탭</p>
+                <p style="margin-left:50px;">재생성 공차, 피쳐 정보 같은 시뮬레이션 및 모델에 대한 정보 보고</p>
+                <p style="margin-left:50px;">매개 변수 사용</p>
+                <p style="margin-left:50px;">검색 도구, 메모, 지시선 등 활용</p>
+                <img src="1. Intro/Intro8.png" height="120">
+                <p>-. 보기 탭</p>
+                <p style="margin-left:50px;">데이텀, 좌표계, 모양새, 방향, 분해 보기 등 보기 관련 기능 제공</p>
+            </div>
+
+            <div style="margin-top:200px;">
+                <h2><li>분석 진행 과정</li></h2>
+                <p style="margin-top:50px;">시뮬레이션 프로세스를 알아보겠습니다.</p>    
+                <img src="1. Intro/Intro9.png" width="900">
+                <img style="border :none;" src="1. Intro/Intro10.png" width="900">
+            </div>
+
+            <div style="margin-top:200px;">
+                <h2><li>솔버, 하드웨어 설정</li></h2>
+                <p style="margin-top:50px;">
+                    Direct Solver 또는 Iterative Solver를 사용할 수 있습니다.
+                    솔버란 연산 방적식을 설계하고 계산하는 프로세서입니다.
+                    Iterative Solver는 좀 더 정확하지만 무거운 솔버이고, Direct Solver는 적은 시간, 디스크 및 공간을 요구하는 좀 더 가벼운 솔버입니다.
+                </p>
+                <img src="1. Intro/Intro11.png" width="500">
+                <img src="1. Intro/Intro12.png">
+                <p>
+                    후에 많이 보게 되실 분석 대화창에서 실행 > 세팅에서 설정할 수 있습니다.
+                    이 창에서 솔버 설정과 메모리 할당을 설정할 수 있습니다.
+                    그외에도 요소 기본 소스 변경, 출력 파일을 Binary 파일 형식, ASCII 파일 형식 (텍스트 전용 형식)으로 내보내기 등을 설정할 수 있습니다.
+                </p>
+            </div>
+
+
+            <div style="margin-top: 100px;">
+                <p style="margin-bottom: 120px;">수고하셨습니다.</p>
+                <h3><a href="CreoSimulate.html" title="Creo 기본 교육 메인페이지로 이동" class="saw" id="active">Creo Simulate 교육 페이지로 돌아가기</a></h3>
+            </div>
+        </div> <!--main, 두번째 grid 영역 끝-->
+        <div></div> <!--log, 세번째 grid 영역-->
+    </div>
+</body>
+</html>

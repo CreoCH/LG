@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Creo simulate 교육 - 어셈블리 연결</title>
+    <link rel="icon" href="CHfavicon.png">
+    <meta charset="utf-8"> 
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            border-width: 7px;
+            border-color: green;
+            border-style: ridge;
+            margin: 0px;
+            padding: 15px;
+        }
+        img {
+            margin: 50px 50px 10px 50px;
+            border: 1px solid;
+            object-fit: contain;
+        }
+        body {
+            margin: 0px;
+        }
+        u {
+            color: rgb(51, 104, 51)
+        }
+        #active {
+            color: blue;
+        }
+        .saw {
+            color: gray;
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: 300px 1300px 300px;
+            grid-template-areas:
+                "index  main  log"
+        }
+        iframe {
+            position: fixed;
+            border-right: 2px solid green;
+            border-bottom: none;
+            border-left: none;
+            border-top: none;
+            width: 300px;
+            height: 100%;
+            margin: 0px;
+        }
+        p {
+            font-size: 17px;
+            line-height: 2.4;
+        }
+        @media (max-width :1300px) {
+            #grid {
+                display: block;
+                margin-top: 1000px;
+            }
+            iframe {
+                position: absolute;
+            }    
+        }
+        /*
+        @media only screen and (min-width :900px) and (max-width :1300px) {
+            #grid {
+                display: block;
+                margin-top: 1000px;
+            }
+            iframe {
+                position: absolute;
+            }    
+        }
+        @media only screen and (min-width :1px) and (max-width : 900px) {
+            #grid {
+                display: block;
+                margin-top: 1000px;
+            }
+            iframe {
+                position: absolute;
+            }
+            img{
+                max-width: 100%;
+                width:auto;
+            }    
+        }
+        */
+    </style>
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <h1 style="margin-top:15px;"><a href="CreoSimulate.html" style="color: green" title="Creo Simulate 교육 메인페이지로 이동">Creo Simulate 교육</a></h1>
+    <iframe src="CreoSimulateIndex.html"></iframe>
+    <div id="grid"> <!--이 바로 아래 div 3개가 grid로 나눠논 index, main, log-->
+        <div></div> <!--index, 첫번째 grid 영역 시작, 끝-->
+        <div style="margin:80px 80px 80px 80px;"> <!--main, 두번째 grid 영역 시작-->
+            <div>
+                <p>본 교육을 위해 아래 다운로드를 클릭해 교육용 CAD를 다운로드해 주시기 바랍니다.</p>
+                <p>이 파일은 Creo 5.0에서 제작하여 그 이하 버전에서는 정상적으로 열리지 않습니다. </p>
+                <P style="margin-top:30px;"></P>
+                <a href="https://pobisgroup-my.sharepoint.com/:f:/g/personal/ch_lee_dimoa_co_kr/Ev_IPYeGtgFBjvHnkISlDjABFvaXf-3pQ5mtm3xqJtq0wQ?e=GoTVQK" target="_blank" style="border: solid red 4px; font-size: 20px;"> 다운로드</a>
+            </div>
+
+            <div style="margin-top: 200px;">
+                <h2><li>접촉 조건</li></h2>
+                <p  style="margin-top: 100px;">
+                    어셈블리에서 파트들끼리의 접촉 조건을 정의합니다.
+                    이 조건을 통해 파트들의 표면을 연결하거나 분리할 수 있습니다.
+                    접촉은 설정에 의해 조건(거리, 각도)에 맞는 서피스를 감지해 자동으로 설정해줍니다.
+                </p>
+                <p>'홈 탭 > 설정 그룹 > 모델 셋업'에서 설정할 수 있습니다.</p>
+                
+
+                <div style="margin-top:180px;">
+                    <p><strong><u>접합 (bonded)</u></strong></p>
+                    <img style="border :none;" src="10. Assy/Assy1.png" >
+                    <p>
+                        이 인터페이스에서는 결합 표면과 요소 면이 병합됩니다
+                        대부분 사용하지 않는 방법으로 탄성이 높은 재질이 완전히 붙어 있어 거의 분리 가능성이 없을 때 사용합니다.
+                    </p>
+                </div>
+                <div style="margin-top:180px;">
+                    <p><strong><u>자유 (Free)</u></strong></p>
+                    <p>
+                        이 인터페이스에서는 결합 표면이 자유롭게 움직이거나 간섭할 수 있습니다.
+                        대부분 사용하지 않는 방법으로 특정 목적이 있을 때 경향을 보는 용도로 주로 사용합니다.
+                    </p>
+                </div>
+                <div style="margin-top:180px;">
+                    <p style="margin-top:50px;"><strong><u>접촉 (Contact)</u></strong></p>
+                    <img style="border :none;" src="10. Assy/Assy2.png">
+                    <p>
+                        대부분의 끼워맞힘으로 조립된 부품에서 사용할 수 있고, 그외에 접촉 가능성이 있는 부분에서 이 조건을 사용합니다.
+                        마찰 조건을 설정하는 접촉으로 이 조건을 많이 사용합니다.
+                    </p>
+                </div>
+                <div style="margin-top:180px;">
+                    <p style="margin-top:50px;"><strong><u>열 관련 접합 조건</u></strong></p>
+                    <img style="border :none;" src="10. Assy/Assy3.png"><img style="border :none;" src="10. Assy/Assy4.png">
+                    <p>
+                        열 분석 모드(Simulate Thermal)라면 접합 (bonded), 단열(Adiabatic), 내열성(Thermal Resistance) 옵션을 제공합니다.
+                        단열은 이상적인 조건이기 때문에 대부분 사용하지 않고 특정 목적이 있을 때 경향을 보는 용도로 주로 사용합니다.
+                        내열성에 열전달 계수를 활용한 조건을 자주 사용합니다.
+                    </p>
+                </div>
+            </div>
+
+            <div style="margin-top:200px;">
+                <h3 style="border : solid green; display: inline; padding: 10px;">중간 실습</h3>
+                <p style="margin-top:50px;"></p>
+                <img style="border :none;" src="10. Assy/Assy5.png" height="120">
+                <strong>
+                    <p>모든 데이텀 디스플레이 유형을 비활성화합니다. </p>
+                    <p style="margin-top:50px;"></p>
+                    <p>1. '홈 탭 > 설정 그룹 > 모델 셋업'<img style= "border :none; margin: 0px;" src="9. Analysis/Analysis6.png" height= "20">을 클릭합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy6.png">
+                    <p>2. 인터페이스 조건을 Contact로 설정하고 위와 같이 입력합니다. 확인을 클릭합니다. 이제 간격이 없고(0mm) 접촉 각도가 5도 이하의 모든 서피스들은 마찰 조건을 가집니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy7.png" width="600">
+                    <p>3. 한번 확인해 보겠습니다. '모델 탭 > 모델 디스플레이 그룹 > 분해 보기'<img style= "border :none; margin: 0px;" src="10. Assy/Assy8.png" height= "20">를 클릭합니다.</p>
+                    <p>4. '모델 미세 조정 탭 > AutoGEM 그룹 > 지오메트리 검토(Review Geometry)'<img style= "border :none; margin: 0px;" src="10. Assy/Assy16.png" height= "20">를 클릭합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy9.png">
+                    <p>5. 솔리드 서피스, 접촉 인터페이스를 제외한 모든 체크를 해제합니다. (솔리드 서피스도 해제 시 형태가 안 보임) 적용을 클릭합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy10.png" width="600">
+                    <p>6. 설정 조건에 의해 자동으로 접촉을 감지한 것을 볼 수 있습니다. 필요하다면 서피스끼리의 간격을 측정해 적용 기준이 맞는지 확인합니다.</p>
+                </strong>
+            </div>
+
+            <div style="margin-top: 200px;">
+                <h2><li>용접 (End Weld)</li></h2>
+                <p style="margin-top: 50px;">용접 옵션을 실제 용접 상태를 적용하는 옵션이 아닙니다.
+                연결 지점, 응력 집중 포인트를 정의하는 기능의 하나로 봐야하기 때문에 사용에 주의하셔야 됩니다.</p>
+                <div style="margin-top: 50px;">
+                    <p><strong><u>끝 용접 (End weld)</u></strong></p>
+                    <img style="border :none;" src="10. Assy/Assy11.png"><img style="border :none;" src="10. Assy/Assy12.png">
+                    <p>
+                        끝 용접이라는 용어는 명칭이 마땅히 없어 사용했으니 참고하시기 바랍니다.
+                        파트 끝과 다른 부분을 용접으로 연결하기 위해서 사용합니다.
+                        위 이미지가 끝 용접의 대표적인 이미지입니다.
+                    </p>
+                </div>
+                <div style="margin-top:180px;">
+                    <p><strong><u>둘레 용접 (Perimeter Weld)</u></strong></p>
+                    <img style="border :none;" src="10. Assy/Assy13.png">
+                    <p>
+                        둘레 용접이라는 용어는 명칭이 마땅히 없어 사용했으니 참고하시기 바랍니다.
+                        두 장의 파트 중 작은 파트의 모서리를 용접하는 경우에 사용합니다.
+                        위 이미지가 주변 용접의 대표적인 이미지입니다.
+                    </p>
+                </div>
+                <div style="margin-top:180px;">
+                    <p style="margin-top:50px;"><strong><u>스폿 용접 (Spot Weld)</u></strong></p>
+                    <img style="border :none;" src="10. Assy/Assy14.png">
+                    <p>
+                        지정한 점과 점을 용접합니다. 때문에 미리 용접할 서피스에 점을 생성해둬야 합니다.
+                    </p>
+                </div>
+            </div>
+
+            <div style="margin-top:200px;">
+                <h3 style="border : solid green; display: inline; padding: 10px;">중간 실습</h3>
+                <p style="margin-top:50px;"></p>
+                <img style="border :none;" src="10. Assy/Assy15.png" height="120">
+                <strong>
+                    <p>모든 데이텀 디스플레이 유형을 비활성화합니다. </p>
+                    <p style="margin-top:50px;"></p>
+                    <p>1. '모델 미세 조정 탭 > 연결 그룹 > 용접'<img style= "border :none; margin: 0px;" src="10. Assy/Assy17.png" height= "20">을 클릭합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy18.png">
+                    <p>2. 타입을 둘레 용접으로 변경하고 첫번째 서피스를 Plate1.prt의 하단면으로 선택합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy19.png">
+                    <p>3. 두번째 서피스를 Plate2.prt의 상단면으로 선택합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy20.png">
+                    <p>4. +ctrl로 위와 같이 모서리를 선택합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy21.png">
+                    <p>5. 두께를 1, 재질을 Steel로 설정하고 확인을 클릭합니다.</p>
+                </strong>
+            </div>
+
+            <div style="margin-top:200px;">
+                <h3 style="border : solid green; display: inline; padding: 10px;">중간 실습</h3>
+                <p style="margin-top:50px;"></p>
+                <img style="border :none;" src="10. Assy/Assy22.png" height="120">
+                <strong>
+                    <p>점<img style= "border :none; margin: 0px;" src="10. Assy/Assy27.png" height= "20">데이텀 디스플레이 유형만 활성화합니다.  </p>
+                    <p style="margin-top:50px;"></p>
+                    <p>1. '모델 미세 조정 탭 > 연결 그룹 > 용접'<img style= "border :none; margin: 0px;" src="10. Assy/Assy17.png" height= "20">을 클릭합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy23.png">
+                    <p>2. 타입을 스폿 용접으로 변경하고 첫번째 서피스를 SHELF.PRT의 하단 서피스로 선택합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy24.png">
+                    <p>3. 두번째 서피스를 U_CHANNEL.PRT의 상단 서피스로 선택합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy25.png">
+                    <p>4. +ctrl로 위와 같이 점을 선택합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy26.png">
+                    <p>5. 지름을 10, 재질은 steel로 설정하고 확인을 클릭합니다.</p>
+                </strong>
+            </div>
+
+            <div style="margin-top: 200px;">
+                <h2><li>패스너</li></h2>
+                <img style="border :none;" src="10. Assy/Assy28.png">
+                <p style="margin-top: 50px;">볼트와 너트로 연결된 부분을 정의합니다.
+                    각 볼트 또는 나사에 의해 전달되는 하중을 시뮬레이션합니다.
+                </p>
+            </div>
+
+            <div style="margin-top:200px;">
+                <h3 style="border : solid green; display: inline; padding: 10px;">중간 실습</h3>
+                <p style="margin-top:50px;"></p>
+                <img style="border :none;" src="10. Assy/Assy29.png" height="120">
+                <strong>
+                    <p>모든 데이텀 디스플레이 유형을 비활성화합니다. </p>
+                    <p style="margin-top:50px;"></p>
+                    <p>1. '모델 미세 조정 탭 > 연결 그룹 > 패스너'<img style= "border :none; margin: 0px;" src="10. Assy/Assy30.png" height= "20">을 클릭합니다.</p>
+                    <p>2. 패스너 유형 드롭다운이 볼트인지 확인합니다. 저장된 방향의 Zoom1<img style= "border :none; margin: 0px;" src="10. Assy/Assy31.png" height= "20">을 선택합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy32.png">
+                    <p>3. Zoom1은 Frame.prt의 상단 구멍을 확대한 방향입니다. 위와 같이 구멍의 모서리를 선택합니다.</p>
+                    <p>4. 저장된 방향의 Zoom2<img style= "border :none; margin: 0px;" src="10. Assy/Assy31.png" height= "20">을 선택합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy33.png">
+                    <p>5. Zoom2은 BACKHEAD.PRT의 하단 구멍을 확대한 방향입니다. 위와 같이 구멍의 모서리를 선택합니다.</p>
+                    <img style="border :none;" src="10. Assy/Assy34.png">
+                    <p>6. 위와 같이 설정하고 확인을 누릅니다. 경고창도 확인을 누릅니다.</p>
+                </strong>
+            </div>
+
+            <div style="margin-top: 200px;">
+                <h2><li>강체 링크 (Rigid link)</li></h2>
+                <img style="border :none;" src="10. Assy/Assy35.png" width="800">
+                <p style="margin-top: 50px;">변형되지 않는 강체로 두 지점을 연결합니다.
+                    강체 링크는 현실에 존재하지 않는 인위적인 강성을 모델에 생성하므로 해당 참조를 선택할 때 주의해야 합니다.
+                    강체 링크 연결 상황을 예를 들면 연결하면 모든 하중을 전달해야 하고, 거리가 일정해야 하는 링크 연결 시 사용합니다.
+                    아래 이미지 같이 작지만, 변경이 적은 위치에 적용하는 것을 추천드립니다.
+                </p>
+                <img style="border :none;" src="10. Assy/Assy37.png" width="900">
+                <p>'모델 미세 조정 탭 > 연결 그룹 > 강체 링크'<img style= "border :none; margin: 0px;" src="10. Assy/Assy36.png" height= "20">에서 사용할 수 있습니다.</p>
+                <p>위와 같이 내부 서피스를 선택해서 연결합니다.</p>
+            </div>
+           
+            <div style="margin-top: 100px;">
+                <p style="margin-bottom: 120px;">수고하셨습니다.</p>
+                <h3><a href="CreoSimulate.html" title="Creo 기본 교육 메인페이지로 이동" class="saw" id="active">Creo Simulate 교육 페이지로 돌아가기</a></h3>
+            </div>
+        </div> <!--main, 두번째 grid 영역 끝-->
+        <div></div> <!--log, 세번째 grid 영역-->
+    </div>
+</body>
+</html>
