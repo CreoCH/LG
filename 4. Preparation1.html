@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>Creo simulate 교육 - 모델 준비Ⅰ</title>
+    <link rel="icon" href="CHfavicon.png">
+    <meta charset="utf-8"> 
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            border-width: 7px;
+            border-color: green;
+            border-style: ridge;
+            margin: 0px;
+            padding: 15px;
+        }
+        img {
+            margin: 50px 50px 10px 50px;
+            border: 1px solid;
+            object-fit: contain;
+        }
+        body {
+            margin: 0px;
+        }
+        u {
+            color: rgb(51, 104, 51)
+        }
+        #active {
+            color: blue;
+        }
+        .saw {
+            color: gray;
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: 300px 1300px 300px;
+            grid-template-areas:
+                "index  main  log"
+        }
+        iframe {
+            position: fixed;
+            border-right: 2px solid green;
+            border-bottom: none;
+            border-left: none;
+            border-top: none;
+            width: 300px;
+            height: 100%;
+            margin: 0px;
+        }
+        p {
+            font-size: 17px;
+            line-height: 3;
+        }
+        @media (max-width :1300px) {
+            #grid {
+                display: block;
+                margin-top: 1000px;
+            }
+            iframe {
+                position: absolute;
+            }    
+        }
+        /*
+        @media only screen and (min-width :900px) and (max-width :1300px) {
+            #grid {
+                display: block;
+                margin-top: 1000px;
+            }
+            iframe {
+                position: absolute;
+            }    
+        }
+        @media only screen and (min-width :1px) and (max-width : 900px) {
+            #grid {
+                display: block;
+                margin-top: 1000px;
+            }
+            iframe {
+                position: absolute;
+            }
+            img{
+                max-width: 100%;
+                width:auto;
+            }    
+        }
+        */
+    </style>
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <h1 style="margin-top:15px;"><a href="CreoSimulate.html" style="color: green" title="Creo Simulate 교육 메인페이지로 이동">Creo Simulate 교육</a></h1>
+    <iframe src="CreoSimulateIndex.html"></iframe>
+    <div id="grid"> <!--이 바로 아래 div 3개가 grid로 나눠논 index, main, log-->
+        <div></div> <!--index, 첫번째 grid 영역 시작, 끝-->
+        <div style="margin:80px 80px 80px 80px;"> <!--main, 두번째 grid 영역 시작-->
+            <div>
+                <p>본 교육을 위해 아래 다운로드를 클릭해 교육용 CAD를 다운로드해 주시기 바랍니다.</p>
+                <p>이 파일은 Creo 5.0에서 제작하여 그 이하 버전에서는 정상적으로 열리지 않습니다. </p>
+                <P style="margin-top:30px;"></P>
+                <a href="https://pobisgroup-my.sharepoint.com/:f:/g/personal/ch_lee_dimoa_co_kr/EqUGVcGErQdCp8hWQec3ixsBLVuoXf00a9h30wA5J8pRhQ?e=LCjx9a" target="_blank" style="border: solid red 4px; font-size: 20px;"> 다운로드</a>
+            </div>
+
+            <h2 style="margin-top: 200px;"><li>모델 단순화</li></h2>
+            <div style="margin-top: 90px;">
+                <p><strong><u>라운드 / 모따기 / 불필요 형상</u></strong></p>
+                <p>
+                    작은 모서리, 작은 표면, 극단적인 돌기 표면의 메쉬는 복잡하며 문제를 일으킬 수 있습니다.
+                    분석 속도와 노이즈를 줄이기 위해 복잡한 형상을 억제해줘야 합니다.
+                </p>
+                <img style="border :none;" src="4. Preparation1/Preparation1.png" width="900">
+                <img style="border :none;" src="4. Preparation1/Preparation2.png">
+                <p>
+                    억제 방법은 다음과 같이 모델트리에서 관련 피쳐나 형상을 클릭하여 억제할 수 있습니다. 제거를 사용해도 되나, 원본을 유지한다는 측면에서 억제 사용을 추천드립니다.
+                </p>
+            </div>
+
+            <div style="margin-top:180px;">
+                <p style="margin-top: 90px;"><strong><u>대칭</u></strong></p>
+                <p  style="margin-top: 50px;"></p><img style="border :none;" src="4. Preparation1/Preparation3.png" width="600">
+                <p>
+                    모델의 모든 측면이 축이나 평면에 대칭이라면 대칭되는 형상을 단순화하여 분석할 수 있습니다.
+                    이때 모든 측면이란 형상뿐만 아니라 재료, 하중, 변위, 고정 조건 등이 속합니다.
+                </p>
+                <img style="border :none;" src="4. Preparation1/Preparation4.png">
+                <p>만약 다음과 같이 대칭되는 모델이 있다면 대칭면을 기준으로 반대 형상을 단순화하여 분석하는 것이 좋습니다.</p>
+                <img style="border :none;" src="4. Preparation1/Preparation6.png"><img style="border :none;" src="4. Preparation1/Preparation5.png" width="340">
+                <p>축으로 대칭되는 모델이 있다면 축을 기준으로 일부 각도의 형상만 분석하거나, 2D 단면으로만 분석이 가능하여 분석 시간이 크게 줄어듭니다.</p>
+                <img style="border :none;" src="4. Preparation1/Preparation7.png"><img style="border :none;" src="4. Preparation1/Preparation8.png">
+                <p>
+                    대칭 형상을 단순화 후 구속 조건을 만들어 주지 않으면 단순히 그런 형상을 가진 모델이되므로 대칭 조건을 잡아줘야 합니다.
+                    대칭 조건은 '홈 탭 > 구속 조건 그룹 드롭다운 > 대칭'에서 설정 가능합니다.
+                    미러 대칭은 대칭인 평면으로 구속되며, 순환(축)대칭은 일정량의 '파이 조각'을 설정하면 구속됩니다.
+                    자세한 적용 방법은 추후 실습과정에서 진행해보도록 하겠습니다.
+                </p>
+            </div>
+
+            <div style="margin-top:200px;">
+                <h2 style="margin-top: 200px;"><li>단위 관리</li></h2>
+                <div style="margin-top: 90px;">
+                    <strong><u>단위 통일</u></strong>
+                    <p style="margin-top: 50px;">
+                        Creo simulate는 단위가 다른 어셈블리를 분석할 수 있습니다. 
+                        또한 입력한 모든 수량에 대해 개별 단위를 선택할 수 있습니다.
+                        다만 이 경우 결과를 분석하는 인원을 혼란하게 만들어 휴먼 에러를 발생시킬 가능성을 줍니다.
+                        생각보다 많은 오류 Case로 보고되고 있습니다.
+                        때문에 단위 통일을 진행할 것을 추천드립니다.
+                    </p>
+                    <img style="border :none;" src="4. Preparation1/Preparation9.png" width="500">
+                    <p>'파일 > 준비 > 모델 속성 > 단위 변경'을 통해 단위를 변경할 수 있습니다.</p>
+                    <img style="border :none;" src="4. Preparation1/Preparation10.png" width="800">
+                    <p>
+                        길이, 시간, 질량, 무게 등을 설정할 수 있습니다.
+                        목록처럼 이미 있는 단위를 설정할 수 있고, 필요 시 '새로 만들기'를 통해 새로운 단위를 설정할 수 있습니다.
+                    </p>
+                    <img style="border :none;" src="4. Preparation1/Preparation11.png" width="400">
+                </div>
+                <div style="margin-top: 180px;">
+                    <strong><u>정확도 통일</u></strong>
+                    <p style="margin-top: 50px;">정확도의 종류는 상대 정확도, 절대 정확도 두가지가 있습니다.</p>
+                    <p>- 상대 정확도 : 가장 작은 거리와 가장 큰 거리의 비율에 따른 정확도입니다. </p>
+                    <p style="margin-left: 110px;">항공기(몸체 - 볼트) 같이 부품 수는 많고 작은 부품까지의 정확도를 지정해야할 때 사용합니다.</p>
+                    <p>- 절대 정확도 : 실제 길이 단위의 최소 허용 거리입니다. (예 0.001mm)</p>
+                    <img style="border :none;" src="4. Preparation1/Preparation12.png" width="800">
+                    <p>정확도의 경우 추천이 아니라 필수 요소입니다. Simulate 오류의 요인이 됩니다.</p>
+                    <p>'파일 > 준비 > 모델 속성 > 정밀도 변경'을 통해 정밀도를 변경할 수 있습니다.</p>
+                </div>
+            </div>
+
+            <div style="margin-top:200px;">
+                <h2 style="margin-top: 200px;"><li>시뮬레이션 좌표계</li></h2>
+                <div style="margin-top: 90px;">
+                    <strong><u>WCS (표준 좌표계)</u></strong>
+                    <p style="margin-top: 50px;">
+                        좌표계는 시뮬레이션 시 위치, 하중, 재료 방향 등의 기준이 되기 때문에 시뮬레이션 목적에 맞는 좌표계를 설정하는 것이 좋습니다.
+                        WCS는 기본 좌표계로 0,0,0을 기준으로 하는 데카르트 좌표계입니다.
+                        좌표계를 따로 설정하지 않으면 설계 시 좌표계(표준좌표계)를 따라갑니다.
+                    </p>
+                    <img style="border :none;" src="4. Preparation1/Preparation13.png" width="500">
+                </div>
+                <div style="margin-top: 180px;">
+                    <strong><u>UCS (사용자 좌표계)</u></strong>
+                    <p style="margin-top: 50px;">카티시안(X,Y,Z), 원통형(R,Θ,Z), 구형(R,θ,Φ)으로 제공되는 좌표계입니다.</p>
+                    <img style="border :none;" src="4. Preparation1/Preparation14.png" width="500"><img style="border :none;" src="4. Preparation1/Preparation15.png" width="500">
+                </div>
+            </div>
+
+            <div style="margin-top:200px;">
+                <h3 style="border : solid green; display: inline; padding: 10px;">중간 실습</h3>
+                <p style="margin-top:50px;"></p>
+                <img style="border :none;" src="4. Preparation1/Preparation16.png" height="120">
+                <p><strong>좌표계를 적용해 보겠습니다.</strong></p>
+                <p><strong>데이텀 디스플레이에서 '좌표계 디스플레이'<img style= "border :none; margin: 0px;" src="4. Preparation1/Preparation17.png" height= "20">만 활성화합니다.</strong></p>
+                <p style="margin-top:50px;"></p>
+                <p><strong>1. '모델 미세 조정 탭 > 기준 그룹 > 좌표계'를 클릭합니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation18.png" width="600">
+                <p><strong>2. 유형을 원통으로 변경합니다. 그림과 같이 모서리를 선택합니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation19.png" width="600">
+                <p><strong>3. 방향 탭을 클릭합니다. 첫번째 항목에 다음 서피스를 입력합니다. 지정을 드롭다운에서 T=0을 선택합니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation20.png" width="600">
+                <p><strong>4. 두번째 항목을 선택하고 다음 서피스를 입력합니다. 투영 드롭다운에서 Z를 선택합니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation21.png" width="600">
+                <p><strong>5. 확인을 눌러 원통 좌표계를 생성합니다. 위 그림과 같이 생성됩니다. </strong></p>
+            </div>
+
+            <div style="margin-top:200px;">
+                <h2><li>영역 사용</li></h2>
+                <img style="border :none;" src="4. Preparation1/Preparation22.png" width="300"><img style="border :none;" src="4. Preparation1/Preparation23.png" width="300">
+                <p style="margin-top:90px;">필요에 따라 모델의 서피스나 부피를 나눠서 영역을 만들 수 있습니다.</p>
+                <p style="margin-top:90px;">예를 들어 평면이지만 원모양으로 하중이 집중되는 상황일 때 위와 같이 영역을 분리해두면 집중되는 하중을 적용할 수 있습니다.</p>
+                <p>'모델 미세 조정 탭 > 영역 그룹 > 서피스 나누기 or 볼륨 영역'에서 설정할 수 있습니다.</p>
+            </div>
+
+            <div style="margin-top:200px;">
+                <h2><li>측정값 사용</li></h2>
+                <img style="border :none;" src="4. Preparation1/Preparation24.png" width="300"><img style="border :none;" src="4. Preparation1/Preparation25.png" width="300">
+                <p style="margin-top:90px;">Simulate에서 기본적인 측정값을 지원하지만, 필요 시 특정 측정값을 지정해 두면 그래프, 도표 등 다양한 플롯으로 결과를 확인할 수 있습니다.</p>
+                <p>'홈 탭 > 실행 그룹 > 측정'에서 설정할 수 있습니다.</p>
+            </div>
+
+            <div style="margin-top:200px;">
+                <h3 style="border : solid green; display: inline; padding: 10px;">중간 실습</h3>
+                <p style="margin-top:50px;"></p>
+                <img style="border :none;" src="4. Preparation1/Preparation26.png" height="120">
+                <p><strong>영역과 측정값을 사용해 분석해 보겠습니다.</strong></p>
+                <p><strong>모든 데이텀 디스플레이 유형을 비활성화합니다.</strong></p>
+                <p style="margin-top:50px;"></p>
+                <p><strong>1. '모델 미세 조정 탭 > 영역 그룹 > 볼륨 영역'을 클릭합니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation27.png" width="600">
+                <p><strong>2. 위와 같이 표면을 선택합니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation28.png" width="600">
+                <p><strong>3. 위와 같이 스케치하고 확인을 클릭합니다.</strong></p>
+                <p><strong>4. 깊이 드롭다운에서 전체통과<img style= "border :none; margin: 0px;" src="4. Preparation1/Preparation29.png" height= "20">를 설정하고 확인을 클릭합니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation30.png" width="600">
+                <p><strong>5. 위와 같이 표면을 선택합니다. '모델 미세 조정 탭 > 기준 그룹 > 점'을 클릭합니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation31.png" width="600">
+                <p><strong>6. 위와 같이 점 위치를 지정합니다. 확인을 눌러 점을 생성합니다.</strong></p>
+                <p><strong>7. '홈 탭 > 실행 그룹 > 측정값'을 클릭합니다.</strong></p>
+                <p><strong>8. New를 클릭해 새로운 측정값을 아래와 같이 입력합니다. (Constraints 설정 8-1참조) 확인을 클릭합니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation32.png">
+                <p><strong>8-1. Constraints의 화살표<img style= "border :none; margin: 0px;" src="4. Preparation1/Preparation34.png" height= "20">를 클릭하고 모델트리에서 위와 같이 확장, Constraint1을 선택합니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation33.png">
+                <p><strong>9. 동일 방법으로 구속 조건2(Constraint2)에 대한 X축 힘 측정값을 만듭니다. </strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation35.png">
+                <p><strong>9-1. 저는 모든 구속 조건에 대한 힘 방향 (X,Y,Z)  측정값도 만들었지만, 시간관계상 const1_FX, const2_FX만 만들어져 있으면 됩니다. </strong></p>
+                <p><strong>10. New를 클릭하고 아래와 같이 입력합니다. Spatial Evalution에서 아래와 같이 서피스를 선택합니다. 확인을 클릭하고 생성합니다.</strong></p>
+                <p><strong>10-1. 안쪽 서피스를 선택하는 법은 마우스 우클릭입니다. 필요하다면 <a Style= "color: blue;" href=".html">Creo 기본 교육</a>의 '4. 피쳐 선택 및 가시성'에 설명된 내용이니 참고하시기 바랍니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation36.png"><img style="border :none;" src="4. Preparation1/Preparation37.png"  width="600">
+                <p><strong>11. 동일한 방법으로 X축 힘 측정값을 만듭니다. (현재 만든 것은 Y축 힘입니다.)</strong></p>
+                <p><strong>10. New를 클릭하고 아래와 같이 입력합니다. Spatial Evalution에서 아까와 같은 서피스를 선택합니다. 점은 아래와 같은 위치를 선택합니다. 확인을 클릭하고 생성합니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation38.png"><img style="border :none;" src="4. Preparation1/Preparation39.png"  width="600">
+                <p><strong>11. '홈 탭 > 실행 그룹 > 분석 및 연구'<img style= "border :none; margin: 0px;" src="6. Constraint/Constraint13.png" height= "20">를 클릭합니다. 첫번째 타입을 분석 실행<img style= "border :none; margin: 0px;" src="6. Constraint/Constraint14.png" height= "20">합니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation40.png" width="600">
+                <p><strong>12. 여러 측정값 결과를 확인해 봅니다.</strong></p>
+                <img style="border :none;" src="4. Preparation1/Preparation41.png" width="600">
+            </div>
+
+            <div style="margin-top: 100px;">
+                <p style="margin-bottom: 120px;">수고하셨습니다.</p>
+                <h3><a href="CreoSimulate.html" title="Creo 기본 교육 메인페이지로 이동" class="saw" id="active">Creo Simulate 교육 페이지로 돌아가기</a></h3>
+            </div>
+        </div> <!--main, 두번째 grid 영역 끝-->
+        <div></div> <!--log, 세번째 grid 영역-->
+    </div>
+</body>
+</html>
